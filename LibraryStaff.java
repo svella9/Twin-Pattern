@@ -1,27 +1,46 @@
 class LibraryStaff
 {
+	Library lib;
 	LibraryStaff()
 	{
-		
+		lib = Library.getInst();
 	}
 	
-	void addNewUser(String user)
+	void addNewUser(String userid, String name)
 	{
-		System.out.println(user + "added to the system successfully..");
+		if( !lib.userTable.containsKey(userid) )
+		{
+			User user = new User(userid,name);
+			lib.userTable.put(userid, user);
+			System.out.println(name + "added to the system successfully..");	
+		}
 	}
 	
-	void removeUser(String user)
+	void removeUser(String userid)
 	{
-		System.out.println(user + "removed from the system..");
+		if( lib.userTable.containsKey(userid) )
+		{
+			User u = lib.userTable.remove(userid);
+			System.out.println(u.name + "removed from the system..");
+		}
 	}
 	
-	void addNewItem(String item)
+	void addNewItem(String itemid, String name, int copies)
 	{
-		System.out.println(item + "added to the system successfully...");
+		if( !lib.itemTable.containsKey(itemid) )
+		{
+			Item item = new Item(itemid, name, copies);
+			lib.itemTable.put(itemid, item);
+			System.out.println(name + "added to the system successfully...");
+		}
 	}
 	
-	void deleteItem(String item)
+	void deleteItem(String itemid)
 	{
-		System.out.println(item + "removed from the system..");
+		if( lib.itemTable.containsKey(itemid) )
+		{
+			Item it = lib.itemTable.remove(itemid);
+			System.out.println(it.name + "removed from the system..");
+		}
 	}
 }
