@@ -1,12 +1,41 @@
 class LibrarianClerk extends LibraryClerk
 {
-	Library lib;
-	LibrarianStaff twin;
+	Library lib;	// why do u need this? parent already has lib, child can use that
+	
+	static LibrarianStaff twin;
 
-	LibrarianClerk()
-	{
+	LibrarianClerk(){
+		
 		lib = Library.getInst();
 	}
+	
+	 void create(){
+		if(twin == null)
+			twin = new LibrarianStaff(); 
+	}
+	
+	void addNewUser(String userid, String name){
+		create();
+		if(twin == null)
+			System.out.println("Null Pointer\n");
+		twin.addNewUser(userid, name);
+	}
+	
+	void removeUser(String userid){
+		create();
+		twin.removeUser(userid);
+	}
+	
+	void addNewItem(String itemid, String name, int copies){
+		create();
+		twin.addNewItem(itemid,name,copies);
+	}
+	
+	void deleteItem(String itemid){
+		create();
+		twin.deleteItem(itemid);
+	}
+	
 	
 	void getUserDetails(String userid)
 	{
@@ -40,14 +69,6 @@ class LibrarianClerk extends LibraryClerk
 			System.out.println("Item does not exists..");
 		}
 	}
-	
-	void updateUserDetails()
-	{
-	}
-	
-	void updateItemDetails()
-	{
-	}
 		
 	void waiveFine(String userid)
 	{
@@ -60,6 +81,28 @@ class LibrarianClerk extends LibraryClerk
 		{
 			System.out.println("User does not exists..");
 		}
+	}
+	
+	
+	void viewUserDetails(){
+		System.out.println("Hello");
+		lib.viewUserDetails();
+		//this.lib.viewUserDetais();
+	}
+	
+	
+	void viewItemDetails(){
+		System.out.println("Hi");
+		lib.viewItemDetails();
+	}
+	
+	
+	void updateUserDetails()
+	{
+	}
+	
+	void updateItemDetails()
+	{
 	}
 	
 }

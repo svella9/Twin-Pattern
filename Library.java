@@ -11,16 +11,26 @@ class Library
 	
 	private Library()
 	{
-		userTable = new HashMap<>();
-		itemTable = new HashMap<>();
+		//System.out.println("Singleton");
+		userTable = new HashMap<String, User>();
+		itemTable = new HashMap<String, Item>();
 	}
 	
 	static Library getInst()
 	{
-		if(obj != null)
+		if(obj == null)
 		{
 			obj = new Library();
 		}
 		return obj;
+	}
+	
+	public void viewUserDetails(){
+		userTable.forEach((k,v) -> System.out.println(k+" "+v.name));
+	}
+	
+	
+	public void viewItemDetails(){
+		itemTable.forEach((k,v) -> System.out.println(k+" "+v.name));
 	}
 }

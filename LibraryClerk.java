@@ -16,7 +16,7 @@ class LibraryClerk
 			{
 				lib.userTable.get(userid).itemlist.add(itemid);
 				lib.itemTable.get(itemid).no_of_copy -= 1;
-				System.out.println(itemid + "item issued to " + userid);
+				System.out.println(itemid + " item issued to " + userid);
 			}
 			else
 			{
@@ -39,7 +39,7 @@ class LibraryClerk
 				{
 					lib.userTable.get(userid).itemlist.contains(itemid);
 					lib.itemTable.get(itemid).no_of_copy += 1;
-					System.out.println(itemid + "item issued to " + userid);
+					System.out.println(itemid + " item returned by " + userid);
 				}
 				else
 				{
@@ -48,7 +48,7 @@ class LibraryClerk
 			}
 			else
 			{
-				System.out.println("Item not available..");
+				System.out.println("Item with itemid "+itemid+" does not exists..");
 			}
 		}
 		else
