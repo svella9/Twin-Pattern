@@ -1,42 +1,61 @@
-class LibrarianClerk extends LibraryClerk
+class Librarian
 {
-	Library lib;	// why do u need this? parent already has lib, child can use that
-	
-	static LibrarianStaff twin;
+	Library lib;
+	LibrarianClerk lc;
+	LibrarianStaff ls;
 
-	LibrarianClerk(){
-		
+	Librarian()
+	{
 		lib = Library.getInst();
+		lc = new LibrarianClerk();
+		ls = new LibrarianStaff();
 	}
-	
-	 void create(){
-		if(twin == null)
-			twin = new LibrarianStaff(); 
+
+	class LibrarianClerk extends LibraryClerk
+	{	
+
 	}
-	
-	void addNewUser(String userid, String name){
-		create();
-		if(twin == null)
-			System.out.println("Null Pointer\n");
-		twin.addNewUser(userid, name);
+
+
+	class LibrarianStaff extends LibraryStaff
+	{
+
 	}
-	
-	void removeUser(String userid){
-		create();
-		twin.removeUser(userid);
+
+	//Library Clerk's funcionalities
+	void processItemIssue(String userid, String itemid)
+	{
+		lc.processItemIssue(userid, itemid);
 	}
-	
-	void addNewItem(String itemid, String name, int copies){
-		create();
-		twin.addNewItem(itemid,name,copies);
+
+	void processItemReturn(String userid, String itemid)
+	{
+		lc.processItemReturn(userid, itemid);
 	}
-	
-	void deleteItem(String itemid){
-		create();
-		twin.deleteItem(itemid);
+
+	//Library Staff's functionalities
+	void addNewUser(String userid, String name)
+	{
+		ls.addNewUser(userid, name);
 	}
+
+	void removeUser(String userid)
+	{
+		ls.removeUser(userid);
+	}
+
+	void addNewItem(String itemid, String name, int copies)
+	{
+		ls.addNewItem(itemid, name, copies);
+	}
+
+	void deleteItem(String itemid)
+	{
+		ls.deleteItem(itemid);
+	}
+
 	
-	
+	//Librarian's functionalities
 	void getUserDetails(String userid)
 	{
 		if( lib.userTable.containsKey(userid) )
@@ -85,7 +104,6 @@ class LibrarianClerk extends LibraryClerk
 	
 	
 	void viewUserDetails(){
-		System.out.println("Hello");
 		lib.viewUserDetails();
 		//this.lib.viewUserDetais();
 	}
@@ -103,6 +121,5 @@ class LibrarianClerk extends LibraryClerk
 	
 	void updateItemDetails()
 	{
-	}
-	
+	}	
 }

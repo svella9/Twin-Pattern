@@ -14,7 +14,7 @@ class LibraryStaff
 		{
 			User user = new User(userid,name);
 			lib.userTable.put(userid, user);
-			System.out.println(name +" added to the system successfully..");	
+			System.out.println(name +" added to the system successfully..");
 		}
 	}
 	
