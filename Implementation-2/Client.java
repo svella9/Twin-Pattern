@@ -20,5 +20,12 @@ class Client
 		librarian.processItemIssue("101","201");
 		librarian.processItemReturn("101","201");
 
+		//testing subclassing
+		Librarian lcm = new LibraryManager();
+		LibraryManager lmanager = (LibraryManager)lcm;
+		lmanager.viewUserDetails();
+		lmanager.addNewStaff();
+    	lmanager.addNewUser("087","Dhamo");
+      	lmanager.viewUserDetails();
 	}
 }

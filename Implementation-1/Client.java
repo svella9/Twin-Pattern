@@ -67,6 +67,12 @@ public class Client
 		
 		/*
 		*/
-				
+	
+
+		//testing subclassing
+		LibraryClerk lmanager = new LibraryManager();
+      	LibraryManager lcm = (LibraryManager)lmanager;
+      	lcm.addNewStaff();
+      	lcm.viewUserDetails();
 	}
 }
