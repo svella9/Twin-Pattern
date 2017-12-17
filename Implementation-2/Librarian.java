@@ -1,36 +1,17 @@
-class Librarian
+class Librarian extends LibraryClerk
 {
 	Library lib;
-	LibrarianClerk lc;
 	LibrarianStaff ls;
 
 	Librarian()
 	{
 		lib = Library.getInst();
-		lc = new LibrarianClerk();
 		ls = new LibrarianStaff();
 	}
-
-	class LibrarianClerk extends LibraryClerk
-	{	
-
-	}
-
 
 	class LibrarianStaff extends LibraryStaff
 	{
 
-	}
-
-	//Library Clerk's funcionalities
-	void processItemIssue(String userid, String itemid)
-	{
-		lc.processItemIssue(userid, itemid);
-	}
-
-	void processItemReturn(String userid, String itemid)
-	{
-		lc.processItemReturn(userid, itemid);
 	}
 
 	//Library Staff's functionalities
@@ -114,12 +95,4 @@ class Librarian
 		lib.viewItemDetails();
 	}
 	
-	
-	void updateUserDetails()
-	{
-	}
-	
-	void updateItemDetails()
-	{
-	}	
 }
