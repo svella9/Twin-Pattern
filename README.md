@@ -1,27 +1,13 @@
 # Twin-Pattern
 Simulate Multiple Inheritance in Languages that don't support.
 
-<img src="media/image1.jpeg" width="175" height="148" />
-
-**Design Pattern Mini-Project**
-
-**(14CS413)**
-
-**Twin Pattern**
-
-**1PI14CS129 - Vijay M Mundaragi**
-
-**1PI14CS087 - S Dhamodhran**
-
-**Twin Pattern**
-
-**Intent - **
+## Intent
 
 Simulating multiple inheritance in programming languages that do not
 support this feature. The pattern avoids many of the problems of
 multiple inheritance while keeping most of its benefits.
 
-**Structure - **
+## Structure
 
 <img src="media/image2.png" width="272" height="244" />
 
@@ -38,7 +24,7 @@ Child1 and Child2 are closely coupled via fields so that we can view
 them as twin objects having two ends. Child1 is compatible with Parent1
 and Child2 is compatible with Parent2.
 
-**Participants**
+## Participants
 
 Parent1 and Parent2
 
@@ -52,7 +38,7 @@ Child1 and Child2
     of the subclasses (e.g. in the figure the new method M3() is added
     to Child1).
 
-**Collaborations**
+## Collaborations
 
 -   Every child class is responsible for the protocol inherited from
     its parent. It handles messages from this protocol and forwards
@@ -64,9 +50,9 @@ Child1 and Child2
 -   Clients that rely on the protocols of Parent1 or Parent2 communicate
     with objects of the respective child class (Child1 or Child2).
 
-**Drawbacks -**
+## Drawbacks
 
-**Subclassing the twin Pattern**
+Subclassing the twin Pattern
 
 If the twin pattern should again be subclassed, it is often sufficient
 to subclass just one of the partners, for example Child1. In order to
@@ -84,7 +70,7 @@ pattern again.
 
 <img src="media/image5.png" width="353" height="328" />
 
-**Inheriting from more than 2 parent classes - **
+Inheriting from more than 2 parent classes
 
 The Twin pattern can be extended to more than two parent classes in a
 straightforward way. For every parent class there must be a child class.
@@ -96,7 +82,7 @@ As the number of parent classes to be inheritance increases, it becomes
 more complex to maintain the classes as they are all tightly coupled.
 The partners of a twin class have to cooperate closely.
 
-**Applicability - **
+## Applicability
 
 The Twin pattern can be used
 
@@ -106,12 +92,12 @@ The Twin pattern can be used
 -   To avoid certain problems of multiple inheritance such as
     name clashes.
 
-**Sample Code - **
+## Sample Code
 
 Consider a Library scenario. There are three administrative staff namely
 a Library Clerk, Library Staff and a Librarian. The Librarian can
 perform tasks that a Library Clerk or Library Staff can performs. Hence
-a **Librarian is both a Library Clerk and Library Staff.**
+a Librarian is both a Library Clerk and Library Staff.
 
 Implementation-1
 
@@ -128,7 +114,7 @@ class within the other twin class. In this implementation we don't have
 the dilemma - which twin class is to be used for subclassing unlike in
 Implementation-1.
 
-**References**
+## References
 
 Twin - A Design Pattern for Modeling Multiple Inheritance
 
