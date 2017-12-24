@@ -3,7 +3,7 @@ class LibrarianClerk extends LibraryClerk
 	Library lib;	// why do u need this? parent already has lib, child can use that
 					// I assumed each person would have a lib obj through which he can access the tables.
 	
-	static LibrarianStaff twin;
+	LibrarianStaff twin;
 
 	LibrarianClerk(){
 		

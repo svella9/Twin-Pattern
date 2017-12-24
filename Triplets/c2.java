@@ -1,23 +1,23 @@
 public class c2 extends p2{
 	
-	static c1 twin1;
-	static c3 twin2;
+	c1 twin1;
+	c3 twin2;
 	
-	static int count = 0;
 	
-	public c2(){
-		if(count == 0){
-			count++;
+	public void check(){
+		if(twin1 == null || twin2 == null){
 			twin1 = new c1();
 			twin2 = new c3();
 		}
 	}
 	
 	public void foo(){
+		check();
 		twin1.foo();
 	}
 	
 	public void fun(){
+		check();
 		twin2.fun();
 	}
 	

@@ -1,13 +1,10 @@
 public class c3 extends p3{
 	
-	static c1 twin1;
-	static c2 twin2;
-	
-	static int count = 0;
+	c1 twin1;
+	c2 twin2;
 		
-	public c3(){
-		if( count == 0){
-			count++;
+	public void check(){
+		if( twin1 == null || twin2 == null){
 			twin1 = new c1();
 			twin2 = new c2();
 			
@@ -15,10 +12,12 @@ public class c3 extends p3{
 	}
 	
 	public void foo(){
+		check();
 		twin1.foo();
 	}
 	
 	public void bar(){
+		check();
 		twin2.bar();
 	}
 	

@@ -1,7 +1,7 @@
 import java.util.*;
 class LibrarianStaff extends LibraryStaff
 {
-	static LibrarianClerk twin;
+	LibrarianClerk twin;
 	
 	void create(){
 		if(twin == null)
