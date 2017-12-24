@@ -1,34 +1,17 @@
 # Twin-Pattern
-Simulate Multiple Inheritance in Java
+Simulate Multiple Inheritance in Languages that don't support.
 
-Library class
-	Singleton
-	usertable <String, User>
-	itemtable <String, Item>
+Implementation-1/
+	Simulating Multiple inheritance using two twin classes and objects.
+	Run: javac Client.java
+		 java Client
 
-Item class
-	id, name , no_of_cpoies
+Implementation-2/
+	Simulating Multiple inheritance using a twin class and a nested twin class.
+	Run: javac Client.java
+		 java Client
 
-User class
-	id, name itemlist, fine
-
-LibraryClerk 
-	processItemIssue(String userid, String itemid)
-	processItemReturn(String userid, String itemid)
-
-LibraryStaff
-	addNewUser(String userid, String name)
-	removeUser(String userid)
-	addNewItem(String itemid, String name, int copies)
-	deleteItem(String itemid)
-
-Librarian
-	void getUserDetails(String userid)
-	void getItemDetails(String itemid)
-	void waiveFine(String userid)
-	void updateUserDetails()
-	void updateItemDetails()
-
-
-
-
+Triplets/
+	Extending to more than two parents.
+	Run: javac client.java
+		 java client
