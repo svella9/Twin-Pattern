@@ -9,11 +9,11 @@ multiple inheritance while keeping most of its benefits.
 
 ## Structure
 
-<img src="media/image2.png" width="272" height="244" />
+<img src="./media/image2.PNG" width="272" height="244" />
 
 Structure of Multiple Inheritance
 
-<img src="media/image3.png" width="295" height="246" />
+<img src="./media/image3.PNG" width="295" height="246" />
 
 Structure Of Twin Pattern
 
@@ -61,14 +61,14 @@ convenient to collect the methods of both partners in one class. One can
 add the methods of Child2 also to Child1 and let them forward requests
 to the other partner.
 
-<img src="media/image4.png" width="282" height="360" />
+<img src="./media/image4.PNG" width="282" height="360" />
 
 The problem with this apporach is that Sub is only compatible with
 Child1 but not with Child2. If one wants to make the subclass compatible
 with both Child1 and Child2 one has to model it according to the Twin
 pattern again.
 
-<img src="media/image5.png" width="353" height="328" />
+<img src="./media/image5.PNG" width="353" height="328" />
 
 Inheriting from more than 2 parent classes
 
@@ -76,7 +76,7 @@ The Twin pattern can be extended to more than two parent classes in a
 straightforward way. For every parent class there must be a child class.
 All child classes have to be mutually linked via fields.
 
-<img src="media/image6.png" width="542" height="262" />
+<img src="./media/image6.PNG" width="542" height="262" />
 
 As the number of parent classes to be inheritance increases, it becomes
 more complex to maintain the classes as they are all tightly coupled.
@@ -101,13 +101,13 @@ a Librarian is both a Library Clerk and Library Staff.
 
 Implementation-1
 
-<img src="media/image7.png" width="540" height="189" />
+<img src="./media/image7.PNG" width="540" height="189" />
 
-<img src="media/image8.png" width="549" height="173" />
+<img src="./media/image8.PNG" width="549" height="173" />
 
 Implementation-2 (Nested Classes)
 
-<img src="media/image9.png" width="540" height="267" />
+<img src="./media/image9.PNG" width="540" height="267" />
 
 Here in Implementation-2, we have one of the twin class as a nested
 class within the other twin class. In this implementation we don't have
